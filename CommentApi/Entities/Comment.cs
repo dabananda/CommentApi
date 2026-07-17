@@ -9,5 +9,6 @@
         public required string Content { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public Guid? ParentCommentId { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

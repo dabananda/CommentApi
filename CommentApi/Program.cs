@@ -1,6 +1,9 @@
+using CommentApi.Commands.CreateComment;
 using CommentApi.Common;
 using CommentApi.Common.Abstraction;
 using CommentApi.Data;
+using CommentApi.Repositories;
+using CommentApi.Repositories.Implementations;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +30,10 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddScoped<ISender, Sender>();
+
+builder.Services.AddScoped<IRequestHandler<CreateCommentCommand, Result>, CreateCommentCommandHandler>();
+
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 var app = builder.Build();
 

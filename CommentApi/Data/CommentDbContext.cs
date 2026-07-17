@@ -13,7 +13,7 @@ namespace CommentApi.Data
             {
                 entity.HasIndex(c => c.PostId);
                 entity.Property(c => c.AuthorName).HasMaxLength(100).IsRequired();
-                entity.Property(c => c.Content).HasMaxLength(2000).IsRequired();
+                entity.Property(c => c.Content).HasMaxLength(500).IsRequired();
             });
         }
     }
