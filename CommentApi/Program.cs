@@ -4,6 +4,8 @@ using CommentApi.Common.Abstraction;
 using CommentApi.Data;
 using CommentApi.Repositories;
 using CommentApi.Repositories.Implementations;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,9 +31,16 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Custom mediator services
 builder.Services.AddScoped<ISender, Sender>();
+builder.Services.AddRequestHandlers(typeof(Program).Assembly);
 
-builder.Services.AddScoped<IRequestHandler<CreateCommentCommand, Result>, CreateCommentCommandHandler>();
+// FluentValidation services
+builder.Services.AddValidatorsFromAssemblyContaining<CreateCommentCommandValidator>();
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
 
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
