@@ -23,9 +23,12 @@ namespace CommentApi.Repositories.Implementations
             return await context.Comments.FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted, cancellationToken);
         }
 
-        public Task<IQueryable<Comment>> GetCommentsAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<Comment>> GetCommentsAsync(CancellationToken cancellationToken)
         {
-            return Task.FromResult(context.Comments.Where(c => !c.IsDeleted));
+            return await context.Comments
+                .Where(c => !c.IsDeleted)
+                .OrderByDescending(c => c.CreatedAt)
+                .ToListAsync(cancellationToken);
         }
 
         public async Task UpdateCommentAsync(Comment comment, CancellationToken cancellationToken)
