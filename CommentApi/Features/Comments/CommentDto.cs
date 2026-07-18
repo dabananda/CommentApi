@@ -1,4 +1,4 @@
-﻿namespace CommentApi.DTOs
+﻿namespace CommentApi.Features.Comments
 {
     public class CommentDto
     {

@@ -1,4 +1,4 @@
-﻿namespace CommentApi.Entities
+﻿namespace CommentApi.Features.Comments
 {
     public class Comment
     {

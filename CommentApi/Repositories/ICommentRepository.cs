@@ -1,4 +1,4 @@
-﻿using CommentApi.Entities;
+﻿using CommentApi.Features.Comments;
 
 namespace CommentApi.Repositories
 {

@@ -1,4 +1,4 @@
-﻿using CommentApi.Entities;
+﻿using CommentApi.Features.Comments;
 using Microsoft.EntityFrameworkCore;
 
 namespace CommentApi.Data

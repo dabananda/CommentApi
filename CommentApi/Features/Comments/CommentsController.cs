@@ -1,8 +1,9 @@
-﻿using CommentApi.Commands.CreateComment;
-using CommentApi.Common.Abstraction;
+﻿using CommentApi.Common.Abstraction;
+using CommentApi.Controllers;
+using CommentApi.Features.Comments.CreateComment;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CommentApi.Controllers
+namespace CommentApi.Features.Comments
 {
     public class CommentsController(ISender sender) : BaseController
     {

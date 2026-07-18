@@ -1,9 +1,8 @@
 ﻿using CommentApi.Common;
 using CommentApi.Common.Abstraction;
-using CommentApi.Mappers;
 using CommentApi.Repositories;
 
-namespace CommentApi.Commands.CreateComment
+namespace CommentApi.Features.Comments.CreateComment
 {
     public class CreateCommentCommandHandler(ICommentRepository commentRepository) : IRequestHandler<CreateCommentCommand, Result>
     {

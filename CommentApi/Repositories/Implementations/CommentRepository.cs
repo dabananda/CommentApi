@@ -1,5 +1,5 @@
 ﻿using CommentApi.Data;
-using CommentApi.Entities;
+using CommentApi.Features.Comments;
 using Microsoft.EntityFrameworkCore;
 
 namespace CommentApi.Repositories.Implementations

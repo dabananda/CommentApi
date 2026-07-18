@@ -1,7 +1,7 @@
 ﻿using CommentApi.Common;
 using CommentApi.Common.Abstraction;
 
-namespace CommentApi.Commands.CreateComment
+namespace CommentApi.Features.Comments.CreateComment
 {
     public record CreateCommentCommand : IRequest<Result>
     {

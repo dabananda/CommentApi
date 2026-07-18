@@ -1,8 +1,6 @@
-﻿using CommentApi.Commands.CreateComment;
-using CommentApi.DTOs;
-using CommentApi.Entities;
+﻿using CommentApi.Features.Comments.CreateComment;
 
-namespace CommentApi.Mappers
+namespace CommentApi.Features.Comments
 {
     public static class CommentMapper
     {

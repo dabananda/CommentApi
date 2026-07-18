@@ -1,7 +1,7 @@
-using CommentApi.Commands.CreateComment;
 using CommentApi.Common;
 using CommentApi.Common.Abstraction;
 using CommentApi.Data;
+using CommentApi.Features.Comments.CreateComment;
 using CommentApi.Repositories;
 using CommentApi.Repositories.Implementations;
 using FluentValidation;
