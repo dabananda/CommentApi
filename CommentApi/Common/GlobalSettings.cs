@@ -7,6 +7,6 @@
 
     public class ConnectionStrings
     {
-        public string SqlServer { get; set; }
+        public string Postgres { get; set; }
     }
 }

@@ -19,7 +19,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<CommentDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+builder.Services.AddDbContext<CommentDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres")));
 
 builder.Services.AddCors(options =>
 {
