@@ -25,7 +25,7 @@ namespace CommentApi.Features.Comments
             return Handle(result);
         }
 
-        [HttpGet]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetCommentById([FromRoute] Guid id)
         {
             var result = await sender.Send(new GetByIdQuery(id));
@@ -39,7 +39,7 @@ namespace CommentApi.Features.Comments
             return Handle(result);
         }
 
-        [HttpPut]
+        [HttpPut("{id:guid}")]
         public async Task<IActionResult> DeleteComment([FromRoute] Guid id)
         {
             var result = await sender.Send(new DeleteCommand(id));
