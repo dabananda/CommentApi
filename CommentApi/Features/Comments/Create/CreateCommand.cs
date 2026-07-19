@@ -1,9 +1,9 @@
 ﻿using CommentApi.Common;
 using CommentApi.Common.Abstraction;
 
-namespace CommentApi.Features.Comments.CreateComment
+namespace CommentApi.Features.Comments.Create
 {
-    public record CreateCommentCommand : IRequest<Result>
+    public record CreateCommand : IRequest<Result>
     {
         public string PostId { get; init; }
         public string AuthorName { get; init; }

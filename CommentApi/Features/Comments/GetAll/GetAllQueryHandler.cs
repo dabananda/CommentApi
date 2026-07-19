@@ -2,11 +2,11 @@
 using CommentApi.Common.Abstraction;
 using CommentApi.Repositories;
 
-namespace CommentApi.Features.Comments.GetComments
+namespace CommentApi.Features.Comments.GetAll
 {
-    public class GetCommentsQueryHandler(ICommentRepository commentRepository) : IRequestHandler<GetCommentsQuery, Result<IEnumerable<CommentDto>>>
+    public class GetAllQueryHandler(ICommentRepository commentRepository) : IRequestHandler<GetAllQuery, Result<IEnumerable<CommentDto>>>
     {
-        public async Task<Result<IEnumerable<CommentDto>>> Handle(GetCommentsQuery request, CancellationToken cancellationToken)
+        public async Task<Result<IEnumerable<CommentDto>>> Handle(GetAllQuery request, CancellationToken cancellationToken)
         {
             var comments = await commentRepository.GetCommentsAsync(cancellationToken);
             var commentDtos = comments.Select(CommentMapper.ToDto);

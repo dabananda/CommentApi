@@ -1,4 +1,4 @@
-﻿using CommentApi.Features.Comments.CreateComment;
+﻿using CommentApi.Features.Comments.Create;
 
 namespace CommentApi.Features.Comments
 {
@@ -32,7 +32,7 @@ namespace CommentApi.Features.Comments
             };
         }
 
-        public static Comment ToEntity(this CreateCommentCommand command)
+        public static Comment ToEntity(this CreateCommand command)
         {
             return new Comment
             {

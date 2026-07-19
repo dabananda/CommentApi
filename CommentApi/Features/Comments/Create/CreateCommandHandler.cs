@@ -2,11 +2,11 @@
 using CommentApi.Common.Abstraction;
 using CommentApi.Repositories;
 
-namespace CommentApi.Features.Comments.CreateComment
+namespace CommentApi.Features.Comments.Create
 {
-    public class CreateCommentCommandHandler(ICommentRepository commentRepository) : IRequestHandler<CreateCommentCommand, Result>
+    public class CreateCommandHandler(ICommentRepository commentRepository) : IRequestHandler<CreateCommand, Result>
     {
-        public async Task<Result> Handle(CreateCommentCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(CreateCommand request, CancellationToken cancellationToken)
         {
             var entity = CommentMapper.ToEntity(request);
             await commentRepository.CreateCommentAsync(entity, cancellationToken);

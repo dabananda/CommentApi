@@ -1,7 +1,7 @@
 using CommentApi.Common;
 using CommentApi.Common.Abstraction;
 using CommentApi.Data;
-using CommentApi.Features.Comments.CreateComment;
+using CommentApi.Features.Comments.Create;
 using CommentApi.Repositories;
 using CommentApi.Repositories.Implementations;
 using FluentValidation;
@@ -36,7 +36,7 @@ builder.Services.AddScoped<ISender, Sender>();
 builder.Services.AddRequestHandlers(typeof(Program).Assembly);
 
 // FluentValidation services
-builder.Services.AddValidatorsFromAssemblyContaining<CreateCommentCommandValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CreateCommandValidator>();
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;

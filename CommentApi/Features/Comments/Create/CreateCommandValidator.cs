@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace CommentApi.Features.Comments.CreateComment
+namespace CommentApi.Features.Comments.Create
 {
-    public class CreateCommentCommandValidator : AbstractValidator<CreateCommentCommand>
+    public class CreateCommandValidator : AbstractValidator<CreateCommand>
     {
-        public CreateCommentCommandValidator()
+        public CreateCommandValidator()
         {
             RuleFor(x => x.PostId)
                 .NotEmpty().WithMessage("PostId is required");
