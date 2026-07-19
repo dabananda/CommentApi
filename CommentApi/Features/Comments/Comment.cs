@@ -2,7 +2,7 @@
 {
     public class Comment
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public required string PostId { get; set; }
         public required string AuthorName { get; set; }
         public string? AuthorEmail { get; set; }
