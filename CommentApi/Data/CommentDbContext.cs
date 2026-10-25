@@ -9,12 +9,16 @@ namespace CommentApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("commentsapi");
+
             modelBuilder.Entity<Comment>(entity =>
             {
                 entity.HasIndex(c => c.PostId);
                 entity.Property(c => c.AuthorName).HasMaxLength(100).IsRequired();
                 entity.Property(c => c.Content).HasMaxLength(500).IsRequired();
             });
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
